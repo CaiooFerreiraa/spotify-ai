@@ -29,7 +29,7 @@ def send_message(msg: str):
   ...
 
 @app.route("/auth", methods=["POST", "GET"])
-def authorization_user():
+def refresh_token():
   ...
 
 @app.route("/login", methods=["GET"])

@@ -4,11 +4,11 @@ import random
 class TestUtils(unittest.TestCase):
   def test_generate_random_string(self, size=16):
     response = ''
-    chars = "1234567890!@#$%&qwertyuiopasdfghjklzxcvbnm=QWERTYUIOPASDFGHJKLZXCVBNM"
-    max_size_chars = len(chars)
+    chars = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+    max_size_chars = len(chars) - 1
 
     for _ in range(size):
-      random_number = random.randint(1, max_size_chars)
+      random_number = random.randint(0, max_size_chars)
       response += chars[random_number]
 
     self.assertEqual(size, len(response))
