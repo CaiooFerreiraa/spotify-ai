@@ -24,7 +24,7 @@ def health_server():
         200
     )
 
-@app.route("/message", methods=["POST"])
+@app.post("/message")
 def send_message(msg: str):
   ...
 
@@ -32,7 +32,7 @@ def send_message(msg: str):
 def refresh_token():
   ...
 
-@app.route("/login", methods=["GET"])
+@app.get("/login")
 def login():
   client_id = getenv("CLIENT_ID")
 
@@ -49,7 +49,7 @@ def login():
 
   return redirect(f"https://accounts.spotify.com/authorize?{params}")
 
-@app.route("/callback", methods=["GET"])
+@app.get("/callback")
 def callback():
   redirect_uri = REDIRECT_URI
 
